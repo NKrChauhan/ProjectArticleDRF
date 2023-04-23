@@ -1,3 +1,5 @@
+from django.shortcuts import get_object_or_404
+
 from ..models.article import Article
 
 
@@ -24,5 +26,5 @@ class ArticleService:
         return articles
 
     def get_article(self, article_id):
-        articles = Article.objects.get(author_id=self.article_author_id, pk=article_id)
-        return articles
+        article = get_object_or_404(Article, author_id=self.article_author_id, pk=article_id)
+        return article
