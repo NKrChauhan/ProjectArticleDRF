@@ -33,7 +33,7 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, AbstractModelWithTimeStamps):
-    email = models.EmailField(max_length=255,unique=True,)
+    email = models.EmailField(max_length=255, unique=True,)
     active = models.BooleanField(default=True)
     staff = models.BooleanField(default=False)
     admin = models.BooleanField(default=False)
